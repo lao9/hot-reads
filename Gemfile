@@ -18,6 +18,7 @@ gem 'rails_12factor', group: :production
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'twitter-bootstrap-rails'
 gem 'faker'
+gem 'rack-cors', :require => 'rack/cors'
 # gem 'faraday'
 # gem 'figaro'
 
