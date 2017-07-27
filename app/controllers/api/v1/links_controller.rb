@@ -1,3 +1,5 @@
+require 'hot_reads/load_seeds'
+
 class Api::V1::LinksController < ApplicationController
 
   def index
@@ -16,7 +18,7 @@ class Api::V1::LinksController < ApplicationController
 
   def reset
     Link.destroy_all
-    create_spaced_out_reads
+    HotReads::LoadSeeds.create_spaced_out_reads_test
     @links = Link.hot_reads
     render json: @links
   end
