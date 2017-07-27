@@ -10,15 +10,15 @@ feature "hot reads index" do
       expect(page).to have_content("Hot Reads")
     end
 
+    save_and_open_page
+
     expect(page).to have_selector(".link", count: 10)
 
     within ".link:nth-child(1)" do
-      expect(page).to have_content("1. http://getbootstrap.com/getting-started/")
       expect(page).to have_link("http://getbootstrap.com/getting-started/")
     end
 
     within ".link:nth-child(10)" do
-      expect(page).to have_content("10. https://mail.google.com")
       expect(page).to have_link("https://mail.google.com")
     end
 

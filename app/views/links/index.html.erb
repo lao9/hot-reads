@@ -1,0 +1,15 @@
+<h1>Hot Reads!</h1>
+
+<div class="well">
+  
+</div>
+
+<ol>
+  <% @links.each do |link| %>
+    <div class="link">
+      <li>
+        <%= link_to link.url, link.url %>
+      </li>
+    </div>
+  <% end %>
+</ol>
