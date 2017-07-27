@@ -10,19 +10,21 @@ def valid_urls
     "http://ruby-doc.org/",
     "https://turing.skedda.com",
     "https://www.fabricationgem.org/",
-    "http://getbootstrap.com/getting-started/",
-    "http://ncase.me/polygons/",
-    "https://turing-fridays.firebaseapp.com/",
-    "https://apidock.com/ruby/DateTime/strftime",
-    "https://stackoverflow.com/",
-    "https://www.codewars.com/dashboard",
-    "http://bencrowder.net/files/vim-fu/",
-    "http://bigocheatsheet.com/",
-    "http://api.jquery.com/",
-    "http://www.usatf.org/routes/map/"
+    "http://getbootstrap.com/getting-started/"
   ]
 end
 
 def create_spaced_out_reads
+
+  len = valid_urls.length
+
+  valid_urls.each_with_index do |url, i|
+    (i+1).times do |n|
+      Link.create(url: url)
+    end
+    (len-i).times do |n|
+      Link.create(url: url, created_at: (Date.today - 2))
+    end
+  end
 
 end

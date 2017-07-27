@@ -26,7 +26,7 @@ FactoryGirl.define do
     "#{n}"
   end
 
-  factory :link_read do
+  factory :link do
     url { generate(:url_address) }
   end
 end
