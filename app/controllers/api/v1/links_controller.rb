@@ -14,6 +14,13 @@ class Api::V1::LinksController < ApplicationController
     end
   end
 
+  def reset
+    Link.destroy_all
+    create_spaced_out_reads
+    @links = Link.hot_reads
+    render json: @links
+  end
+
   private
 
     def link_params
