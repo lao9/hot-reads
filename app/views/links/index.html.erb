@@ -1,0 +1,17 @@
+<h1>Hot Reads!</h1>
+
+<div>
+  <img src="https://media.giphy.com/media/xUPGclrAkkzaJS7vJm/giphy.gif" alt="chris-tucker">
+</div>
+
+<hr>
+
+<ol>
+  <% @links.each do |link| %>
+    <div class="link">
+      <li>
+        <%= link_to link.url, link.url %>
+      </li>
+    </div>
+  <% end %>
+</ol>
